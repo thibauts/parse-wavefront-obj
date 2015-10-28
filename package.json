@@ -1,6 +1,6 @@
 {
   "name": "parse-wavefront-obj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wavefront OBJ parser",
   "main": "index.js",
   "scripts": {
