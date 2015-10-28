@@ -29,15 +29,15 @@ function parse(str) {
         name = parts.slice(1).join(' ');
         break;
       case 'v':
-        var position = parts.slice(1).map(Number)
+        var position = parts.slice(1).map(Number).slice(0, 3);
         positions.push(position);
         break;
       case 'vt':
-        var uv = parts.slice(1).map(Number)
+        var uv = parts.slice(1).map(Number);
         vertexUVs.push(uv);
         break;
       case 'vn':
-        var normal = parts.slice(1).map(Number)
+        var normal = parts.slice(1).map(Number);
         vertexNormals.push(normal);
         break;
       case 'f':
