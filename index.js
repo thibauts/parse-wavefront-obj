@@ -22,6 +22,7 @@ function parse(str) {
 
     var parts = line
       .trim()
+      .replace(/ +/g, ' ')
       .split(' ');
 
     switch(parts[0]) {
