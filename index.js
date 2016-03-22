@@ -54,17 +54,17 @@ function parse(str) {
                 if(index === '') {
                   return NaN;
                 }
-                return Number(index) - 1;
+                return Number(index);
               })
 
-            positionIndices.push(indices[0]);
+            positionIndices.push(convertIndex(indices[0], positions.length));
 
             if(indices.length > 1) {
               if(!isNaN(indices[1])) {
-                uvIndices.push(indices[1]);
+                uvIndices.push(convertIndex(indices[1], vertexUVs.length));
               }
               if(!isNaN(indices[2])) {
-                normalIndices.push(indices[2]);
+                normalIndices.push(convertIndex(indices[2], vertexNormals.length));
               }
             }
 
@@ -112,6 +112,10 @@ function parse(str) {
   }
 
   return mesh;
+}
+
+function convertIndex(objIndex, arrayLength) {
+  return objIndex > 0 ? objIndex - 1 : objIndex + arrayLength;
 }
 
 module.exports = parse;
